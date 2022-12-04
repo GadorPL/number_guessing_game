@@ -43,6 +43,7 @@ def game():
                 elif guess < number:
                     print("Too low.")
                 print("Guess again.")
+            print(f"You have {lives} attempts left.")
         restart_game = input("Do you want to play again? Type 'y' for yes or 'n' for no:  ").lower()
         if restart_game == 'y':
             game()
