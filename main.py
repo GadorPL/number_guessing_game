@@ -17,10 +17,9 @@ def game_over(player_lives, player_guess, num):
 def set_difficulty():
     difficulty = input("Choose a difficulty. Type 'easy or 'hard': ").lower()
     if difficulty == 'hard':
-        lives = HARD_LEVEL_LIVES
+        return HARD_LEVEL_LIVES
     else:
-        lives = EASY_LEVEL_LIVES
-    return lives
+        return EASY_LEVEL_LIVES
 
 
 def game():
