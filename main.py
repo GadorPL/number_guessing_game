@@ -1,6 +1,9 @@
 from art import logo
 import random
 
+EASY_LEVEL_LIVES = 10
+HARD_LEVEL_LIVES = 5
+
 
 def game_over(player_lives, player_guess, num):
     if player_lives == 0:
@@ -11,6 +14,15 @@ def game_over(player_lives, player_guess, num):
         return False
 
 
+def set_difficulty():
+    difficulty = input("Choose a difficulty. Type 'easy or 'hard': ").lower()
+    if difficulty == 'hard':
+        lives = HARD_LEVEL_LIVES
+    else:
+        lives = EASY_LEVEL_LIVES
+    return lives
+
+
 def game():
     keep_playing = True
     while keep_playing:
@@ -18,12 +30,8 @@ def game():
         print("Welcome to the Number Guessing Game!")
 
         number = random.randint(1, 100)
-        difficulty = input("Choose a difficulty. Type 'easy or 'hard': ").lower()
-        if difficulty == 'hard':
-            lives = 5
-        else:
-            lives = 10
 
+        lives = set_difficulty()
         print(f"You have {lives} attempts remaining to guess the number.")
 
         guess = 0
